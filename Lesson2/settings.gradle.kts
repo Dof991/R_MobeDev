@@ -25,4 +25,6 @@ include(":activitylifecycle")
 include(":multiactivity")
 include(":intentfilter")
 include(":toastapp")
+include(":notificationapp")
+include(":dialog")
  
