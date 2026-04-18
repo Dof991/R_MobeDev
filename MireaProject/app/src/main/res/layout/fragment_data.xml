@@ -1,0 +1,55 @@
+﻿<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/TextAppearance.Material3.HeadlineLarge"
+            android:id="@+id/title_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Информация об МИРЭА, Российский технологический университет"
+            android:textSize="24sp"
+            android:textColor="?attr/colorOnSurface"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:id="@+id/content_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="
+Признанный в России и в мире современный образовательный и научно-исследовательский центр, сочетающий в своей работе классические университетские традиции и современные образовательные технологии. Начиная с момента своего образования, вуз всегда шел в ногу со временем и постоянно расширял спектр образовательных программ в соответствии с потребностями страны в инженерных кадрах, одновременно повышая качество подготовки специалистов и добиваясь признания как в России, так и за ее пределами. РТУ МИРЭА сегодня является одним из лидеров в области подготовки высококвалифицированных специалистов для быстро развивающихся наукоемких отраслей науки и техники: телекоммуникаций, информационных и компьютерных технологий, автоматики, кибернетики, радиотехники и электроники, химии и биотехнологий.
+
+В Университете реализуется уникальная система обучения «вуз - базовая кафедра - базовое предприятие», которая обеспечивает высокую эффективность учебного процесса и гарантирует быструю адаптацию выпускников к реальным условиям современного производства. РТУ МИРЭА сегодня – это более 50 базовых кафедр при научно-исследовательских институтах РАН, конструкторских бюро и на высокотехнологичных предприятиях Московского региона. Благодаря сочетанию глубокой общенаучной теоретической подготовки с практической деятельностью студентов на крупнейших отраслеобразующих инновационных предприятиях с передовыми наукоемкими технологиями, РТУ МИРЭА гарантирует эффективную подготовку выпускников к условиям будущей производственной деятельности.
+"
+            android:textSize="16sp"
+            android:textColor="?attr/colorOnSurface"
+            android:lineSpacingMultiplier="1.2" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:cardCornerRadius="12dp"
+            app:cardBackgroundColor="@color/white"
+            app:strokeWidth="1dp"
+            android:layout_marginTop="16dp">
+
+            <ImageView
+                android:id="@+id/industry_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/mires_logo" />
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

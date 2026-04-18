@@ -16,5 +16,14 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />
+        <item
+            android:id="@+id/nav_data"
+            android:icon="@drawable/ic_launcher_background"
+            android:title="Информация" />
+
+        <item
+            android:id="@+id/nav_webview"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="Браузер" />
     </group>
 </menu>

@@ -27,16 +27,19 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        CreateImagePickIntent();
+    }
 
+    void CreateImagePickIntent(){
         Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.putExtra(Intent.EXTRA_TEXT, "Mirea");
         intent.setType("*/*");
-        ActivityResultCallback<ActivityResult> callback = new ActivityResultCallback<ActivityResult>()
-        {
+        ActivityResultCallback<ActivityResult> callback = new ActivityResultCallback<ActivityResult>() {
             @Override
             public void onActivityResult(ActivityResult result) {
                 if (result.getResultCode() == Activity.RESULT_OK) {
                     Intent data = result.getData();
-                    // Log.d(MainActivity.class.getSimpleName(), "Data:" + data.getDataString());
+                    Log.d(MainActivity.class.getSimpleName(), "Data");
                 }
             }
         };
