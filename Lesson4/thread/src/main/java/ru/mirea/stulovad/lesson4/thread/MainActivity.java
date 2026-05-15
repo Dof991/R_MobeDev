@@ -12,10 +12,10 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.util.Arrays;
 
-
+import ru.mirea.stulovad.lesson4.thread.databinding.ActivityMainBinding;
 
 public	class	MainActivity extends AppCompatActivity	{
-
+    private ActivityMainBinding binding;
     private	int	counter	= 0;
 
     @Override

@@ -27,4 +27,4 @@ include(":looper")
 include(":cryptoloade")
 include(":serviceap")
 include(":workmanager")
- 
+include(":musicapp")
