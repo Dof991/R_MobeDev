@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@id/nav_home">
 
     <fragment
         android:id="@+id/nav_home"
@@ -11,17 +11,6 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
-    <fragment
-        android:id="@+id/nav_gallery"
-        android:name="ru.mirea.stulovad.mireaproject.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="ru.mirea.stulovad.mireaproject.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
     <fragment
         android:id="@+id/nav_data"
         android:name="ru.mirea.stulovad.mireaproject.ui.data.DataFragment"
@@ -33,4 +22,28 @@
         android:name="ru.mirea.stulovad.mireaproject.ui.browser.WebViewFragment"
         android:label="Веб-браузер"
         tools:layout="@layout/fragment_web_view" />
+
+    <fragment
+        android:id="@+id/nav_worker"
+        android:name="ru.mirea.stulovad.mireaproject.ui.worker.WorkerFragment"
+        android:label="Background Task"
+        tools:layout="@layout/fragment_worker" />
+
+    <fragment
+        android:id="@+id/nav_recorder"
+        android:name="ru.mirea.stulovad.mireaproject.ui.recorder.RecorderFragment"
+        android:label="Recorder"
+        tools:layout="@layout/fragment_recorder" />
+
+    <fragment
+        android:id="@+id/nav_camera"
+        android:name="ru.mirea.stulovad.mireaproject.ui.camera.CameraFragment"
+        android:label="Camera Collage"
+        tools:layout="@layout/fragment_camera" />
+
+    <fragment
+        android:id="@+id/nav_sensor"
+        android:name="ru.mirea.stulovad.mireaproject.ui.sensor.SensorFragment"
+        android:label="Pressure Sensor"
+        tools:layout="@layout/fragment_sensor" />
 </navigation>
