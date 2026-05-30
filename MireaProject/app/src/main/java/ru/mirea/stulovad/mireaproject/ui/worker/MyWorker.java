@@ -2,9 +2,11 @@ package ru.mirea.stulovad.mireaproject.ui.worker;
 
 import android.content.Context;
 import android.util.Log;
+
 import androidx.annotation.NonNull;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
+
 import java.util.concurrent.TimeUnit;
 
 public class MyWorker extends Worker {
@@ -15,13 +17,13 @@ public class MyWorker extends Worker {
     @NonNull
     @Override
     public Result doWork() {
-        Log.d("MireaProjectWorker", "Выполнение задачи началато");
+        Log.d("MireaProjectWorker", "Фоновая задача началась");
         try {
             TimeUnit.SECONDS.sleep(3);
         } catch (InterruptedException e) {
             return Result.failure();
         }
-        Log.d("MireaProjectWorker", "Выполнение задачи завершено");
+        Log.d("MireaProjectWorker", "Фоновая задача успешно завершена");
         return Result.success();
     }
 }

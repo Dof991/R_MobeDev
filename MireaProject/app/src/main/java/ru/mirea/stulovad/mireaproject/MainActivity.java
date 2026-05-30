@@ -2,7 +2,6 @@ package ru.mirea.stulovad.mireaproject;
 
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.View;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +12,6 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -47,12 +45,12 @@ public class MainActivity extends AppCompatActivity {
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home,
+                R.id.nav_profile,
                 R.id.nav_data,
                 R.id.nav_webview,
-                R.id.nav_worker,
-                R.id.nav_recorder,
+                R.id.nav_sensor,
                 R.id.nav_camera,
-                R.id.nav_sensor
+                R.id.nav_audio
         ).setOpenableLayout(drawerLayout).build();
 
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
@@ -67,23 +65,6 @@ public class MainActivity extends AppCompatActivity {
         );
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-
-        FloatingActionButton fabCamera = findViewById(R.id.fab_camera);
-        fabCamera.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                navController.navigate(R.id.nav_camera);
-            }
-        });
-
-        // Hide FAB when in Camera Fragment (optional but better UX)
-        navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
-            if (destination.getId() == R.id.nav_camera) {
-                fabCamera.setVisibility(View.GONE);
-            } else {
-                fabCamera.setVisibility(View.VISIBLE);
-            }
-        });
     }
 
     @Override

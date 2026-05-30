@@ -1,7 +1,6 @@
 package ru.mirea.stulovad.mireaproject.ui.sensor;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -13,80 +12,77 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
-import java.util.Locale;
 
 import ru.mirea.stulovad.mireaproject.R;
 
 public class SensorFragment extends Fragment implements SensorEventListener {
 
     private SensorManager sensorManager;
-    private Sensor pressureSensor;
-    private TextView tvPressureValue;
-    private TextView tvPressureStatus;
+    private Sensor accelerometer;
+    private Sensor magnetometer;
 
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    private float[] gravity;
+    private float[] geomagnetic;
+
+    private TextView tvHeading;
+    private TextView tvDegrees;
+
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_sensor, container, false);
 
-        tvPressureValue = root.findViewById(R.id.tvPressureValue);
-        tvPressureStatus = root.findViewById(R.id.tvPressureStatus);
+        tvHeading = root.findViewById(R.id.tvHeading);
+        tvDegrees = root.findViewById(R.id.tvDegrees);
 
-        sensorManager = (SensorManager) requireContext().getSystemService(Context.SENSOR_SERVICE);
-        pressureSensor = sensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE);
-
+        sensorManager = (SensorManager) requireActivity().getSystemService(Context.SENSOR_SERVICE);
+        accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        magnetometer = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
 
         return root;
     }
 
     @Override
-    public void onSensorChanged(SensorEvent event) {
-        if (event.sensor.getType() == Sensor.TYPE_PRESSURE) {
-            float pressureHPa = event.values[0];
-            // Convert hPa to mmHg: 1 hPa = 0.750062 mmHg
-            float pressureMmHg = pressureHPa * 0.750062f;
-
-            tvPressureValue.setText(String.format(Locale.getDefault(), "Давление: %.2f ммрс", pressureMmHg));
-
-            String status;
-            int color;
-            if (pressureMmHg >= 739 && pressureMmHg <= 755) {
-                status = "НОРМАЛЬНОЕ";
-                color = Color.GREEN;
-            } else if (pressureMmHg < 730) {
-                status = "НИЗВКОЕ";
-                color = Color.RED;
-            }else {
-                status = "ВЫСОКОЕ";
-                color = Color.RED;
-            }
-
-            tvPressureStatus.setText(status);
-            tvPressureStatus.setTextColor(color);
-        }
-    }
-
-    @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy) {
-        // Not needed for this task
-    }
-
-    @Override
     public void onResume() {
         super.onResume();
-        if (pressureSensor != null) {
-            sensorManager.registerListener(this, pressureSensor, SensorManager.SENSOR_DELAY_NORMAL);
+        if (accelerometer != null && magnetometer != null) {
+            sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_UI);
+            sensorManager.registerListener(this, magnetometer, SensorManager.SENSOR_DELAY_UI);
         }
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        if (sensorManager != null) {
-            sensorManager.unregisterListener(this);
+        sensorManager.unregisterListener(this);
+    }
+
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) gravity = event.values;
+        if (event.sensor.getType() == Sensor.TYPE_MAGNETIC_FIELD) geomagnetic = event.values;
+
+        if (gravity != null && geomagnetic != null) {
+            float[] R = new float[9];
+            float[] I = new float[9];
+            if (SensorManager.getRotationMatrix(R, I, gravity, geomagnetic)) {
+                float[] orientation = new float[3];
+                SensorManager.getOrientation(R, orientation);
+                float azimuthInRadians = orientation[0];
+                float azimuthInDegrees = (float) (Math.toDegrees(azimuthInRadians) + 360) % 360;
+
+                tvDegrees.setText(Math.round(azimuthInDegrees) + "°");
+
+                String direction = "Неизвестно";
+                if (azimuthInDegrees >= 315 || azimuthInDegrees < 45) direction = "Север \n(Мох растет с вашей стороны)";
+                else if (azimuthInDegrees >= 45 && azimuthInDegrees < 135) direction = "Восток \n(Отсюда восходит солнце)";
+                else if (azimuthInDegrees >= 135 && azimuthInDegrees < 225) direction = "Юг \n(Самая теплая сторона)";
+                else if (azimuthInDegrees >= 225 && azimuthInDegrees < 315) direction = "Запад \n(Здесь садится солнце)";
+
+                tvHeading.setText(direction);
+            }
         }
     }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {}
 }

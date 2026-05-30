@@ -7,18 +7,24 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/tvHeading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Определение направления..."
+        android:text="Создание аудиозаметки"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_marginBottom="32dp"/>
 
-    <TextView
-        android:id="@+id/tvDegrees"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/btnRecord"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="0°"
-        android:textSize="48sp"/>
+        android:text="Начать запись"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnPlay"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Слушать заметку"
+        android:enabled="false" />
 </LinearLayout>

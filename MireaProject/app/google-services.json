@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "450178259936",
+    "project_id": "mireaproject-8665c",
+    "storage_bucket": "mireaproject-8665c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450178259936:android:8b940797a3779add226985",
+        "android_client_info": {
+          "package_name": "ru.mirea.stulovad.mireaproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcq8-krRCuGaYpAy6BBS90XyV_AV_PBRI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

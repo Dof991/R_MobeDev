@@ -2,60 +2,30 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:gravity="center_horizontal">
+    android:padding="16dp">
 
-    <Button
-        android:id="@+id/btnTakePicture"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Сделать фото (0/4)" />
+        android:text="Ваш профиль"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
 
-    <GridLayout
-        android:id="@+id/gridLayout"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/profileImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@android:drawable/ic_menu_camera"
+        android:background="#DDDDDD"
+        android:layout_marginBottom="24dp"/>
+
+    <Button
+        android:id="@+id/btnUpdateProfile"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:columnCount="2"
-        android:rowCount="2">
-
-        <ImageView
-            android:id="@+id/ivPhoto1"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_columnWeight="1"
-            android:scaleType="centerCrop"
-            android:background="#DDDDDD"
-            android:layout_margin="4dp"/>
-
-        <ImageView
-            android:id="@+id/ivPhoto2"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_columnWeight="1"
-            android:scaleType="centerCrop"
-            android:background="#DDDDDD"
-            android:layout_margin="4dp"/>
-
-        <ImageView
-            android:id="@+id/ivPhoto3"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_columnWeight="1"
-            android:scaleType="centerCrop"
-            android:background="#DDDDDD"
-            android:layout_margin="4dp"/>
-
-        <ImageView
-            android:id="@+id/ivPhoto4"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_columnWeight="1"
-            android:scaleType="centerCrop"
-            android:background="#DDDDDD"
-            android:layout_margin="4dp"/>
-
-    </GridLayout>
-
+        android:text="Сделать фото профиля" />
 </LinearLayout>

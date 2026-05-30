@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LogInActivity">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/emailte"
+        android:layout_width="374dp"
+        android:layout_height="65dp"
+        android:hint="email"
+        app:layout_constraintBottom_toTopOf="@+id/passwordte"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.853" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/passwordte"
+        android:layout_width="372dp"
+        android:layout_height="86dp"
+        android:layout_marginBottom="504dp"
+        android:hint="password"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="159dp"
+        android:layout_height="61dp"
+        android:text="Create account"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.355"
+        app:layout_constraintStart_toEndOf="@+id/sing_in"
+        app:layout_constraintTop_toBottomOf="@+id/passwordte"
+        app:layout_constraintVertical_bias="0.124" />
+
+    <Button
+        android:id="@+id/sing_in"
+        android:layout_width="161dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="28dp"
+        android:text="Sign in"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordte"
+        app:layout_constraintVertical_bias="0.124" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

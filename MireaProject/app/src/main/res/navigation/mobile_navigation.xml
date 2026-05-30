@@ -14,36 +14,57 @@
     <fragment
         android:id="@+id/nav_data"
         android:name="ru.mirea.stulovad.mireaproject.ui.data.DataFragment"
-        android:label="Информация"
+        android:label="@string/menu_data"
         tools:layout="@layout/fragment_data" />
 
     <fragment
         android:id="@+id/nav_webview"
-        android:name="ru.mirea.stulovad.mireaproject.ui.browser.WebViewFragment"
-        android:label="Веб-браузер"
+        android:name="ru.mirea.stulovad.mireaproject.ui.webview.WebViewFragment"
+        android:label="@string/menu_webview"
         tools:layout="@layout/fragment_web_view" />
 
     <fragment
         android:id="@+id/nav_worker"
         android:name="ru.mirea.stulovad.mireaproject.ui.worker.WorkerFragment"
-        android:label="Background Task"
+        android:label="@string/menu_worker"
         tools:layout="@layout/fragment_worker" />
-
-    <fragment
-        android:id="@+id/nav_recorder"
-        android:name="ru.mirea.stulovad.mireaproject.ui.recorder.RecorderFragment"
-        android:label="Recorder"
-        tools:layout="@layout/fragment_recorder" />
-
-    <fragment
-        android:id="@+id/nav_camera"
-        android:name="ru.mirea.stulovad.mireaproject.ui.camera.CameraFragment"
-        android:label="Camera Collage"
-        tools:layout="@layout/fragment_camera" />
 
     <fragment
         android:id="@+id/nav_sensor"
         android:name="ru.mirea.stulovad.mireaproject.ui.sensor.SensorFragment"
-        android:label="Pressure Sensor"
+        android:label="@string/menu_sensor"
         tools:layout="@layout/fragment_sensor" />
+
+    <fragment
+        android:id="@+id/nav_camera"
+        android:name="ru.mirea.stulovad.mireaproject.ui.camera.CameraFragment"
+        android:label="@string/menu_camera"
+        tools:layout="@layout/fragment_camera" />
+
+    <fragment
+        android:id="@+id/nav_audio"
+        android:name="ru.mirea.stulovad.mireaproject.ui.audio.AudioFragment"
+        android:label="@string/menu_audio"
+        tools:layout="@layout/fragment_audio" />
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="ru.mirea.stulovad.mireaproject.ui.profile.ProfileFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/nav_file"
+        android:name="ru.mirea.stulovad.mireaproject.ui.file.FileFragment"
+        android:label="@string/menu_file"
+        tools:layout="@layout/fragment_file" />
+    <fragment
+        android:id="@+id/nav_map"
+        android:name="ru.mirea.stulovad.mireaproject.ui.map.MapFragment"
+        android:label="Карта"
+        tools:layout="@layout/fragment_map" />
+    <fragment
+        android:id="@+id/nav_internetInfo"
+        android:name="ru.mirea.stulovad.mireaproject.ui.internetinfo.InternetInfoFragment"
+        android:label="Интернет ресурсы"
+        tools:layout="@layout/fragment_internet_info" />
+
 </navigation>

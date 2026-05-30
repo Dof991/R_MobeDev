@@ -1,8 +1,9 @@
-﻿<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -10,45 +11,95 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <com.google.android.material.textview.MaterialTextView
-            style="@style/TextAppearance.Material3.HeadlineLarge"
-            android:id="@+id/title_text"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Информация об МИРЭА, Российский технологический университет"
-            android:textSize="24sp"
-            android:textColor="?attr/colorOnSurface"
-            android:textStyle="bold"
-            android:layout_marginBottom="16dp" />
-
-        <com.google.android.material.textview.MaterialTextView
-            style="@style/TextAppearance.Material3.BodyLarge"
-            android:id="@+id/content_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="
-Признанный в России и в мире современный образовательный и научно-исследовательский центр, сочетающий в своей работе классические университетские традиции и современные образовательные технологии. Начиная с момента своего образования, вуз всегда шел в ногу со временем и постоянно расширял спектр образовательных программ в соответствии с потребностями страны в инженерных кадрах, одновременно повышая качество подготовки специалистов и добиваясь признания как в России, так и за ее пределами. РТУ МИРЭА сегодня является одним из лидеров в области подготовки высококвалифицированных специалистов для быстро развивающихся наукоемких отраслей науки и техники: телекоммуникаций, информационных и компьютерных технологий, автоматики, кибернетики, радиотехники и электроники, химии и биотехнологий.
-
-В Университете реализуется уникальная система обучения «вуз - базовая кафедра - базовое предприятие», которая обеспечивает высокую эффективность учебного процесса и гарантирует быструю адаптацию выпускников к реальным условиям современного производства. РТУ МИРЭА сегодня – это более 50 базовых кафедр при научно-исследовательских институтах РАН, конструкторских бюро и на высокотехнологичных предприятиях Московского региона. Благодаря сочетанию глубокой общенаучной теоретической подготовки с практической деятельностью студентов на крупнейших отраслеобразующих инновационных предприятиях с передовыми наукоемкими технологиями, РТУ МИРЭА гарантирует эффективную подготовку выпускников к условиям будущей производственной деятельности.
-"
-            android:textSize="16sp"
-            android:textColor="?attr/colorOnSurface"
-            android:lineSpacingMultiplier="1.2" />
+            android:layout_marginBottom="12dp"
+            android:text="3D-моделирование"
+            android:textSize="28sp"
+            android:textStyle="bold" />
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            app:cardCornerRadius="12dp"
-            app:cardBackgroundColor="@color/white"
-            app:strokeWidth="1dp"
-            android:layout_marginTop="16dp">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="20dp">
 
-            <ImageView
-                android:id="@+id/industry_image"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/mires_logo" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="О чём отрасль"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text=" Создание цифровых трёхмерных объектов и сред с помощью специализированного программного обеспечения."
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Основные направления"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text=" Промышленный дизайн и инжиниринг, CGI для кино и видеоигр, архитектурная визуализация, подготовка моделей для 3D-печати."
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Почему эта отрасль важна"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Позволяет тестировать и презентовать продукты без физического производства, а также создавать визуальные эффекты, невозможные в реальной съёмке, создавать модели для печати и изготавления на спец оборудовании."
+                    android:textSize="16sp" />
+            </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
