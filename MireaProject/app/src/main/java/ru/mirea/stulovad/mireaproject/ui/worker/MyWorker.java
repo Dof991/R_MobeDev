@@ -19,7 +19,7 @@ public class MyWorker extends Worker {
     public Result doWork() {
         Log.d("MireaProjectWorker", "Фоновая задача началась");
         try {
-            TimeUnit.SECONDS.sleep(3);
+            TimeUnit.SECONDS.sleep(5);
         } catch (InterruptedException e) {
             return Result.failure();
         }

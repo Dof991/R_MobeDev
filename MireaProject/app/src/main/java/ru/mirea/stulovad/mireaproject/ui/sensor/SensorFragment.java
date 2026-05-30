@@ -73,10 +73,10 @@ public class SensorFragment extends Fragment implements SensorEventListener {
                 tvDegrees.setText(Math.round(azimuthInDegrees) + "°");
 
                 String direction = "Неизвестно";
-                if (azimuthInDegrees >= 315 || azimuthInDegrees < 45) direction = "Север \n(Мох растет с вашей стороны)";
-                else if (azimuthInDegrees >= 45 && azimuthInDegrees < 135) direction = "Восток \n(Отсюда восходит солнце)";
-                else if (azimuthInDegrees >= 135 && azimuthInDegrees < 225) direction = "Юг \n(Самая теплая сторона)";
-                else if (azimuthInDegrees >= 225 && azimuthInDegrees < 315) direction = "Запад \n(Здесь садится солнце)";
+                if (azimuthInDegrees >= 315 || azimuthInDegrees < 45) direction = "Север";
+                else if (azimuthInDegrees >= 45 && azimuthInDegrees < 135) direction = "Восток";
+                else if (azimuthInDegrees >= 135 && azimuthInDegrees < 225) direction = "Юг";
+                else if (azimuthInDegrees >= 225 && azimuthInDegrees < 315) direction = "Запад";
 
                 tvHeading.setText(direction);
             }
